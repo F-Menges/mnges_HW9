@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey page 2</title>
+    <style>
+      .highlight-error {
+        border: 2px solid yellow;
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+    </style>
+    <script>
+      function validateForm(event) {
+        const checkboxes = document.querySelectorAll(
+          'input[name="core-class"]:checked'
+        );
+        if (checkboxes.length === 0) {
+          event.preventDefault(); // Prevent form submission
+          alert("Please select at least 1 core class.");
+          return false;
+        }
+        return true; // Allow form submission
+      }
+    </script>
+  </head>
+  <body>
+    <form
+      action="mnges_ty.html"
+      method="get"
+      onsubmit="return validateForm(event)"
+    >
+      <h1>Business Analytics Student Survey</h1>
+      <p>I am finishing my</p>
+      <p>
+        <label for="first">
+          <input
+            type="radio"
+            id="first"
+            name="year"
+            value="first-year"
+            required
+          />
+          first year at Iowa
+        </label>
+        <label for="second">
+          <input type="radio" id="second" name="year" value="second-year" />
+          second year at Iowa
+        </label>
+        <label for="third">
+          <input type="radio" id="third" name="year" value="third-year" /> third
+          year at Iowa
+        </label>
+        <label for="fourth">
+          <input type="radio" id="fourth" name="year" value="fourth-year" />
+          fourth year at Iowa
+        </label>
+        <label for="fifth">
+          <input type="radio" id="fifth" name="year" value="fifth-year" /> fifth
+          or more year at Iowa
+        </label>
+      </p>
+      <div id="checkbox-group">
+        <fieldset>
+          <legend>BAIS core clases I have completed</legend>
+          <label for="is">
+            <input
+              type="checkbox"
+              id="is"
+              name="core-class"
+              value="information-system"
+            />
+            Information Systems
+          </label>
+          <label for="ops">
+            <input
+              type="checkbox"
+              id="ops"
+              name="core-class"
+              value="operations"
+            />
+            Operations
+          </label>
+          <label for="ba">
+            <input
+              type="checkbox"
+              id="ba"
+              name="core-class"
+              value="business-analytics"
+            />
+            Foundations of Business Analytics
+          </label>
+          <label for="ct">
+            <input
+              type="checkbox"
+              id="ct"
+              name="core-class"
+              value="computational-thinking"
+            />
+            Computational Thinking
+          </label>
+          <label for="data-mang">
+            <input
+              type="checkbox"
+              id="data-mang"
+              name="core-class"
+              value="database-management"
+            />
+            Database Management
+          </label>
+          <label for="dw">
+            <input
+              type="checkbox"
+              id="dw"
+              name="core-class"
+              value="data-wrangling"
+            />
+            Data Wrangling
+          </label>
+          <label for="data-mine">
+            <input
+              type="checkbox"
+              id="data-mine"
+              name="core-class"
+              value="data-mining"
+            />
+            Data Mining
+          </label>
+          <label for="cap">
+            <input
+              type="checkbox"
+              id="cap"
+              name="core-class"
+              value="capstone"
+            />
+            BAIS Capstone
+          </label>
+        </fieldset>
+      </div>
+      <br />
+      <button type="submit">Next</button>
+      <p>page 2 of 2</p>
+    </form>
+  </body>
+</html>
